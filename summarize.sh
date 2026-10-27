@@ -32,6 +32,7 @@ call_ai() {
         log_file="$(mktemp "${TMPDIR:-/tmp}/codex-summary.XXXXXX.log")"
 
         if ! codex exec \
+	    --model gpt-5.6-sol \
             -c tools.web_search=true \
             --cd "$(pwd)" \
             --sandbox workspace-write \
